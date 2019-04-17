@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Carina Graham Portfolio">
+  <meta name="author" content="Tristan Wilson">
+
+  <title>Carina Graham</title>
+
+  <!----- Bootstrap CSS ----->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  
+  <!------ Custom CSS ------->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!------------------------->
+  <!------ Navigation  ------>
+  <!------------------------->
+
+  <div class="container">
+  
+    <nav class="navbar navbar-expand-sm navbar-light bg-white">
+  
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <a class="navbar-brand show-mobile" href="#">CG</a>
+      
+      <a class="navbar-brand brand-cg show-desktop" href="#">CG</a>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto"> 
+          
+          <!--<a class="navbar-brand brand-cg show-desktop" href="#">CG</a>-->
+          
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="latest.html">Latest</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+      
+    </nav>
+  
+  </div>
+
+
+
+  <!------------------------->
+  <!--- Main Body Content --->
+  <!------------------------->
+  
+  <div class="container container-main-content">
+  
+    <!----- ROW 1 IMAGES ----->
+    <div class="row">
+
+      <div class="col-12 col-md-6 border all-pad-15">
+        <div class="col-media pop">
+          <img data-image="img/CG(6).jpg" src="img/1px.png" class="img-media-css img-top" alt="FILL IN FOR ACCESSIBILITY"/>
+        </div>
+      </div>
+      
+      <div class="col-12 col-md-6 border">
+        <div class="row">
+          <div class="col-6 col-lg-6 all-pad-15">
+            <div class="col-media-half pop">
+              <img data-image="img/CG(8).png" src="img/1px.png" class="img-media-css-half img-top" alt="FILL IN FOR ACCESSIBILITY"/>
+            </div>
+          </div>
+          <div class="col-6 col-lg-6 all-pad-15">
+            <div class="col-media-half pop">
+              <img data-image="img/CG(9).png" src="img/1px.png" class="img-media-css-half img-top" alt="FILL IN FOR ACCESSIBILITY"/>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-12 all-pad-15">
+            <div class="col-media-half-w pop">
+              <img data-image="img/CG(1).png" src="img/1px.png" class="img-media-css-half-w img-top" alt="FILL IN FOR ACCESSIBILITY"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <!----- ROW 2 IMAGES ----->    
+    <div class="row">
+    
+      <div class="col-12 col-md-6 border">
+        <div class="row">
+          <div class="col-6 col-md-6 col-lg-6 all-pad-15">
+            <div class="col-media-half-t pop">
+              <img data-image="img/CG(12).jpg" src="img/1px.png" class="img-media-css-half-t img-top" alt="FILL IN FOR ACCESSIBILITY"/>
+            </div>
+          </div>
+          <div class="col-6 col-md-6 col-lg-6 all-pad-15">
+            <div class="col-media-half-t pop">
+              <img data-image="img/CG(4).png" src="img/1px.png" class="img-media-css-half-t img-top" alt="FILL IN FOR ACCESSIBILITY"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12 col-md-6 border all-pad-15">
+        <div class="col-media pop">
+          <img data-image="img/CG(11).jpg" src="img/1px.png" class="img-media-css img-top" alt="FILL IN FOR ACCESSIBILITY"/>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!----- ROW 3 IMAGES ----->
+      
+    
+    
+    <!------- Image Enlargement Modal ------->
+    <div class="modal fade modal-img-enlarge" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close modal-close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <img src="img/placeholder.png" alt="Enlarged Image" id="imagepreview" style="" >
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  
+  <!-- Custom Responsive Image Resize JS -->
+  <script type="text/javascript">
+    $(document).ready(boxSizer);
+    $(window).resize(boxSizer);
+    
+    function boxSizer(){
+      var cmw = $('.col-media').width();
+      var cmHw = $('.col-media-half').width();
+      $('.col-media').css({'max-height':cmw / 1 + 'px'});
+      $('.col-media-half').css({'max-height':cmHw / 1 + 'px'});
+      $('.col-media-half-w').css({'max-height':cmHw / 1 + 'px'});
+      $('.col-media-half-t').css({'max-height':cmw / 1 + 'px'});
+      $('.img-media-css').css({'height':cmw / 1 + 'px'});
+      $('.img-media-css-half').css({'height':cmHw / 1 + 'px'});
+      $('.img-media-css-half-w').css({'height':cmHw / 1 + 'px'});
+      $('.img-media-css-half-t').css({'height':cmw / 1 + 'px'});
+    }
+  </script>
+  
+  <!-- Extract URL from 'data-image' -->
+  <!-- attribute for CSS Background -->
+  <script type="text/javascript">
+  var list = document.querySelectorAll("img[data-image]");
+
+  for (var i = 0; i < list.length; i++) {
+    var url = list[i].getAttribute('data-image');
+    list[i].style.backgroundImage="url('" + url + "')";
+  }
+  </script>
+  
+  <!-- Image Expand Modal JS -->
+  <script type="text/javascript">
+  $('.pop').on("click", function() {
+     $('#imagepreview').attr('src', $(this).find('img').attr('data-image')); // Takes the content of the data-image attribute & adds it to the src attribute of the modal img
+     $('#imagemodal').modal('show'); // shows the hidden bootstrap modal containing the enlarged image view
+  });
+  </script>
+
+</body>
+
+</html>

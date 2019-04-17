@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Carina Graham">
+  <meta name="author" content="Tristan Wilson">
+
+  <title>Latest | Carina Graham</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!------------------------->
+  <!------ Navigation  ------>
+  <!------------------------->
+  
+  <div class="container">
+  
+    <nav class="navbar navbar-expand-sm navbar-light bg-white">
+  
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <a class="navbar-brand show-mobile" href="index.html">CG</a>
+      
+      <a class="navbar-brand brand-cg show-desktop" href="index.html">CG</a>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto"> 
+          
+          <!--<a class="navbar-brand brand-cg show-desktop" href="#">CG</a>-->
+         
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Latest <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+      
+    </nav>
+  
+  </div>
+
+  <!------------------------->
+  <!--- Main Body Content --->
+  <!------------------------->
+  
+  <div class="container">    
+    
+    <!----- ROW 1 IMAGES LATEST ----->
+    <!-- Instagram Recent Photos Insertion -->
+    <div class="row">
+      <div class="col-12 col-md-12 border">
+        <div id="instafeed" class="row"></div>
+      </div>
+    </div>  
+    
+  </div>
+
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  
+  
+  <!-- Instafeed.js Instagram API Call JS-->
+  <!-- Based on work by Steven Schobert -->
+  <!-- https://github.com/stevenschobert/instafeed.js -->
+  <!-- See '../js/licenses/instafeedLicense' -->
+  
+  <script src="js/instafeed.js"></script>
+  <script type="text/javascript">
+    var feed = new Instafeed({
+        get: 'user',
+        //UserID # for five.eleven.1995   //userId: '8032352398',
+        userId: '14095781',
+        accessToken: '14095781.00a5236.846bd97432424571ba649768d21617b8',
+        clientId: '00a5236dfa40412298dcac22db494353',
+        resolution: 'standard_resolution',
+        sortBy: 'most-recent',
+        limit: '16',
+        template: '<div class="col-6 col-md-3 col-lg-3 all-pad-15"><div class="col-media-half"><a href="{{link}}"><img src="{{image}}" class="img-media-half"/></a></div></div>' 
+        //Original Insertion Template  //template: '<a href="{{link}}"><img src="{{image}}" /></a>'
+    });
+    feed.run();   
+  </script>
+  
+  <!-- Custom Responsive Image Resize JS -->
+  <script type="text/javascript">
+    $(document).ready(boxSizer);
+    $(window).resize(boxSizer);
+    
+    function boxSizer(){
+      var cmw = $('.col-media').width();
+      var cmHw = $('.col-media-half').width();
+      $('.col-media').css({'max-height':cmw / 1 + 'px'});
+      $('.col-media-half').css({'max-height':cmHw / 1 + 'px'});
+      $('.col-media-half-w').css({'max-height':cmHw / 1 + 'px'});
+      $('.col-media-half-t').css({'max-height':cmw / 1 + 'px'});
+      $('.img-media').css({'min-height':cmw / 1 + 'px'});
+      $('.img-media-half').css({'min-height':cmHw / 1 + 'px'});
+      $('.img-media-half-w').css({'min-height':cmHw / 1 + 'px'});
+      $('.img-media-half-t').css({'height':cmw / 1 + 'px'});
+      $('.img-media-css').css({'height':cmw / 1 + 'px'});
+      $('.img-media-css-half').css({'height':cmHw / 1 + 'px'});
+      $('.img-media-css-half-w').css({'height':cmHw / 1 + 'px'});
+      $('.img-media-css-half-t').css({'height':cmw / 1 + 'px'});
+    }
+  </script>
+  
+  <!-- Extract URL from 'data-image' -->
+  <!-- attribute for CSS Background -->
+  <script type="text/javascript">
+  var list = document.querySelectorAll("img[data-image]");
+
+  for (var i = 0; i < list.length; i++) {
+    var url = list[i].getAttribute('data-image');
+    list[i].style.backgroundImage="url('" + url + "')";
+  }
+  </script>
+
+</body>
+
+</html>
